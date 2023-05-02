@@ -4,6 +4,7 @@ import { QueryTupleResult } from "../types";
 import { authMiddleware } from "../middleware/authMiddleware";
 import { importQuotes } from "../controllers/importController";
 import { uploadMiddleware } from "../middleware/uploadMiddleware";
+import { RowDataPacket } from "mysql2";
 const router = Router();
 
 router.get("/", async (req: Request, res: Response) => {
@@ -101,6 +102,26 @@ router.get("/topics-by-title", async (req: Request, res: Response) => {
   )) as QueryTupleResult;
 
   res.json(quotes);
+});
+
+router.get("/random", async (req: Request, res: Response) => {
+  try {
+    const connection = await getConnection();
+    const [quoteResults] = (await connection.query(
+      "SELECT * FROM quotes ORDER BY RAND() LIMIT 1"
+    )) as QueryTupleResult;
+    const quotes = quoteResults as RowDataPacket[];
+
+    if (quotes.length === 0) {
+      res.status(404).json({ message: "No quotes found." });
+      return;
+    }
+
+    res.status(200).json(quotes[0]);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Error fetching random quote." });
+  }
 });
 
 router.post(
