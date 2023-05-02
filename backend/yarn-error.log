@@ -1,0 +1,41 @@
+Arguments: 
+  /opt/homebrew/Cellar/node/19.8.1/bin/node /usr/local/bin/yarn add express mysql2 typescript ts-node nodemon dotenv cors jsonwebtoken bcrypt express-rate-limit @types/express @types/mysql2 @types/node @types/dotenv @types/cors @types/jsonwebtoken @types/bcrypt @types/express-rate-limit
+
+PATH: 
+  /Users/avi/Library/Android/sdk/emulator:/Users/avi/Library/Android/sdk/tools:~/Library/Android/sdk/platform-tools:/Users/avi/.bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Users/avi/Library/Android/sdk/emulator:/Users/avi/Library/Android/sdk/tools:~/Library/Android/sdk/platform-tools:/Users/avi/.bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/avi/Library/Android/sdk/platform-tools:/usr/local/mysql/bin/:/Users/avi/Library/Android/sdk/platform-tools:/usr/local/mysql/bin/
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  19.8.1
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/@types%2fmysql2: Not found
+      at params.callback [as _callback] (/usr/local/lib/node_modules/yarn/lib/cli.js:66145:18)
+      at self.callback (/usr/local/lib/node_modules/yarn/lib/cli.js:140890:22)
+      at Request.emit (node:events:512:28)
+      at Request.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141862:10)
+      at Request.emit (node:events:512:28)
+      at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141784:12)
+      at Object.onceWrapper (node:events:626:28)
+      at IncomingMessage.emit (node:events:524:35)
+      at endReadableNT (node:internal/streams/readable:1359:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+
+npm manifest: 
+  {
+    "name": "backend",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
