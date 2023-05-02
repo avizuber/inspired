@@ -1,0 +1,14 @@
+{
+  "name": "inspired",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:avizuber/inspired.git",
+  "author": "Avi Zuber <avi.zuber@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "concurrently \"npm run start --prefix backend\" \"npm start --prefix frontend\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.1"
+  }
+}
